@@ -6,10 +6,11 @@ export interface ButtonProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, disabled, type = "button", ...props }, ref) => {
-    return <button
-    ref={ref}
-    className={cn(
-      `
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          `
       w-auto
       rounded-full
       bg-black
@@ -23,9 +24,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       hover:opacity-75
       transition
       `,
-      className
-    )}
-    >{children}</button>;
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </button>
+    );
   }
 );
 
