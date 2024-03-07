@@ -11,6 +11,7 @@ import IconButton from "@/components/ui/icon-button";
 import Button from "@/components/ui/button";
 import Link from "next/link";
 import NavbarActions from "./navbar-actions";
+import { FaFacebookF, FaInstagramSquare } from "react-icons/fa";
 
 interface NavbarContentProps {
   data: Category[];
@@ -23,11 +24,11 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ data }) => {
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
 
-  const [navbar, setNavbar] = useState(false);
-  const changeNavbar = () => {
-    window.scrollY >= 700 ? setNavbar(true) : setNavbar(false);
-  };
-  window.addEventListener("scroll", changeNavbar);
+  // const [navbar, setNavbar] = useState(false);
+  // const changeNavbar = () => {
+  //   window.scrollY >= 700 ? setNavbar(true) : setNavbar(false);
+  // };
+  // window.addEventListener("scroll", changeNavbar);
 
   const routes = data.map((route) => ({
     href: `/category/${route.id}`,
@@ -37,9 +38,9 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ data }) => {
 
   return (
     <div
-      className={`w-full top-0 z-50 ${
-        navbar ? "bg-white fixed" : "bg-transparent absolute"
-      }`}
+      className={`w-full top-0 z-50 bg-white fixed
+      `}
+      // navbar ? "bg-white fixed" : "bg-transparent absolute"
     >
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <div>
@@ -98,6 +99,15 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ data }) => {
                       {route.label}
                     </Link>
                   ))}
+
+                  <div className="flex items-center gap-2 mt-2">
+                    <Link href="/">
+                      <FaFacebookF size={20} />
+                    </Link>
+                    <Link href="/">
+                      <FaInstagramSquare size={20} />
+                    </Link>
+                  </div>
                 </nav>
               </Dialog.Panel>
             </div>

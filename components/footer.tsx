@@ -1,14 +1,18 @@
-
 const Footer = () => {
-    return ( 
-        <div className="bg-white border-t">
-            <div className="mx-auto py-10">
-                <p className="text-center text-xs text-black">
-                    &copy; 2024 Fake store, Inc. All rights reserved.
-                </p>
-            </div>
-        </div>
-     );
-}
- 
+  return (
+    <div className="pb-20 max-w-screen-lg mx-auto text-neutral-500 grid grid-cols-3 gap-10 text-sm">
+      <div>
+        <div className="font-bold">Om min konst</div>
+        This is my art. Västerås. Om konstnären.
+      </div>
+
+      <div>
+        <div className="font-bold">Vid beställning</div>
+        Så här går det till när du beställer. Hämtning i Västerås, konsthus
+        eller leverans. Regler. Även kostnader för leverans.
+      </div>
+    </div>
+  );
+};
+
 export default Footer;

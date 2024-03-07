@@ -8,7 +8,7 @@ import getAllProducts from "@/actions/get-all-products";
 export const revalidate = 0;
 
 const ProductsPage = async () => {
-    const products = await getAllProducts();
+  const products = await getAllProducts();
   const billboard = await getBillboard("099522e6-7a85-4470-bb00-f1e59334edb4");
 
   return (
