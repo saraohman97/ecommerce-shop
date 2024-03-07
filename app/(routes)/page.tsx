@@ -11,14 +11,22 @@ const HomePage = async () => {
   const billboard = await getBillboard("099522e6-7a85-4470-bb00-f1e59334edb4");
 
   return (
-    <Container>
-      <div className="space-y-10 pb-10">
-        <Billboard data={billboard} />
+    <div>
+      <Billboard data={billboard} />
+      <Container>
         <div className="flex flex-col gap-y-8 sm:px-6 lg:px-8">
           <ProductList title="Featured Products" items={products} />
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
+    // <Container>
+    //   <div className="space-y-10 pb-10">
+    //     <Billboard data={billboard} />
+    //     <div className="flex flex-col gap-y-8 sm:px-6 lg:px-8">
+    //       <ProductList title="Featured Products" items={products} />
+    //     </div>
+    //   </div>
+    // </Container>
   );
 };
 
