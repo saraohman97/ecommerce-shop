@@ -45,6 +45,26 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ data }) => {
 
             {/* Main navbar */}
             <nav className="flex flex-col gap-2 p-10">
+              <Link
+                href="/"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-black",
+                  pathname === `/` ? "text-black" : "text-neutral-500"
+                )}
+                onClick={onClose}
+              >
+                Hem
+              </Link>
+              <Link
+                href="/produkter"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-black",
+                  pathname === `/produkter` ? "text-black" : "text-neutral-500"
+                )}
+                onClick={onClose}
+              >
+                Alla produkter
+              </Link>
               {routes.map((route) => (
                 <Link
                   key={route.href}
@@ -53,6 +73,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ data }) => {
                     "text-sm font-medium transition-colors hover:text-black",
                     route.active ? "text-black" : "text-neutral-500"
                   )}
+                  onClick={onClose}
                 >
                   {route.label}
                 </Link>
