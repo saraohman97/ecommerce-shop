@@ -92,6 +92,53 @@ const CategoryList = () => {
           </Link>
         </div>
       </div>
+
+      {/* CONTACT FORM */}
+      <div className="my-20 py-20 bg-neutral-50 flex flex-col items-center text-neutral-500 gap-6">
+        <div>Kontakta mig</div>
+
+        <div className="flex items-end">
+          <label className="pr-2">Mitt namn är </label>
+          <input
+            type="text"
+            className="border-b border-neutral-800 bg-transparent"
+          />
+          .
+        </div>
+
+        <div className="flex items-end">
+          <label className="pr-2">Jag nås via mailaddressen </label>
+          <input
+            type="text"
+            className="border-b border-neutral-800 bg-transparent"
+          />
+          .
+        </div>
+
+        <div className="flex items-end">
+          <label className="pr-2">Jag är intresserad av målningen </label>
+          <input
+            type="text"
+            className="border-b border-neutral-800 bg-transparent"
+          />
+          .
+        </div>
+
+        <div className="py-2 px-4 mt-4 bg-white border">Skicka meddelande</div>
+      </div>
+
+      <div className="pb-20 max-w-screen-lg mx-auto text-neutral-500 grid grid-cols-3 gap-10 text-sm">
+        <div>
+          <div className="font-bold">Om min konst</div>
+          This is my art. Västerås. Om konstnären.
+        </div>
+
+        <div>
+          <div className="font-bold">Vid beställning</div>
+          Så här går det till när du beställer. Hämtning i Västerås, konsthus
+          eller leverans. Regler. Även kostnader för leverans.
+        </div>
+      </div>
     </>
   );
 };

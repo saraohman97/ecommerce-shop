@@ -7,7 +7,6 @@ interface Query {
   categoryId?: string;
   colorId?: string;
   sizeId?: string;
-  isFeatured?: boolean;
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
@@ -17,7 +16,6 @@ const getProducts = async (query: Query): Promise<Product[]> => {
       colorId: query.colorId,
       sizeId: query.sizeId,
       categoryId: query.categoryId,
-      isFeatured: query.isFeatured,
     },
   });
 
