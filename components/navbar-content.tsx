@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Dialog } from "@headlessui/react";
@@ -24,11 +24,16 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ data }) => {
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
 
-  // const [navbar, setNavbar] = useState(false);
-  // const changeNavbar = () => {
-  //   window.scrollY >= 700 ? setNavbar(true) : setNavbar(false);
-  // };
-  // window.addEventListener("scroll", changeNavbar);
+  const [navbar, setNavbar] = useState(false);
+  const changeNavbar = () => {
+    window.scrollY >= 700 ? setNavbar(true) : setNavbar(false);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavbar);
+    return () => {
+      window.removeEventListener("scroll", changeNavbar);
+    };
+  }, []);
 
   const routes = data.map((route) => ({
     href: `/category/${route.id}`,
@@ -38,8 +43,12 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ data }) => {
 
   return (
     <div
-      className={`w-full top-0 z-50 bg-white fixed
-      `}
+    // className={cn(
+      //   `w-full top-0 z-50`,
+      //   navbar === true ? "bg-white fixed" : "bg-transparent absolute"
+      // )}
+    className={`w-full top-0 z-50 ${navbar ? "bg-white fixed" : "bg-transparent absolute"}`}
+      // className={`w-full top-0 z-50 bg-white fixed`}
       // navbar ? "bg-white fixed" : "bg-transparent absolute"
     >
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
