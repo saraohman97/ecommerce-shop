@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   };
 
   return (
-    <div onClick={handleClick} className="relative">
+    <div onClick={handleClick} className="relative group">
       {/* PRODUCT */}
       <Image
         src={data.images?.[0]?.url}
@@ -43,8 +43,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
         height={500}
         className="object-cover w-full h-[450px]"
       />
-      <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
-        <div className="flex gap-x-6 justify-center">
+      <div className="opacity-0 group-hover:opacity-100 transition absolute w-full bottom-16 right-4">
+        <div className="flex flex-col gap-y-4 items-end">
           <IconButton
             onClick={onPreview}
             icon={<Expand size={20} className="text-gray-600" />}

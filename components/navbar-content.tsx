@@ -43,13 +43,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({ data }) => {
 
   return (
     <div
-    // className={cn(
-      //   `w-full top-0 z-50`,
-      //   navbar === true ? "bg-white fixed" : "bg-transparent absolute"
-      // )}
     className={`w-full top-0 z-50 ${navbar ? "bg-white fixed" : "bg-transparent absolute"}`}
-      // className={`w-full top-0 z-50 bg-white fixed`}
-      // navbar ? "bg-white fixed" : "bg-transparent absolute"
     >
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <div>
